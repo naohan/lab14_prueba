@@ -19,13 +19,14 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./lab14/lab14.csproj
 
     - name: Build application
-      run: dotnet build --configuration Release
+      run: dotnet build ./lab14/lab14.csproj --configuration Release
 
     - name: Publish application
-      run: dotnet publish --configuration Release --output ./published
+      run: dotnet publish ./lab14/lab14.csproj --configuration Release --output ./published
+
 
     - name: Deploy to server (ejemplo de despliegue)
       run: |
